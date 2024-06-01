@@ -1,0 +1,65 @@
+﻿@model Alunos.Domain.Entidades.StudentsDTO
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            table th, table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            table th {
+                background-color: #f2f2f2;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edição de Alunos</h2>
+        @using (Html.BeginForm("EditUsers", "Home", FormMethod.Post))
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>USUARIO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="ID" value="@Model.ID"  /></td>
+                        <td><input type="text" name="NOME" value="@Model.Nome" /></td>
+                        <td><input type="text" name="USUARIO" value="@Model.Usuario" /></td>SS
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit">Salvar</button>
+        }
+    </div>
+</body>
+</html>
+
